@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  position: relative; /* wichtig für Layer */
+  overflow: hidden;
+}
+
+/* hinterer Layer */
+.containerBackgroundBack {
+  position: absolute;
+  width: 0%;
+  inset: 0;
+  background: rgb(16, 18, 112);
+  z-index: 0;
+}
+
+/* animierbarer Layer */
+.containerBackgroundFront {
+  position: absolute;
+  inset: 0;
+  background: black;
+  z-index: 1;
+}
+
+/* Content immer oben */
+.containerHeadline,
+.containerText {
+    color: #000;
+  position: relative;
+  z-index: 2;
+}
